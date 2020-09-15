@@ -3,7 +3,7 @@ package pe.pucp.edu.telecom.util;
 import pe.pucp.edu.telecom.entity.Usuario;
 import pe.pucp.edu.telecom.manager.DirectorioTelefonico;
 
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Opciones {
@@ -47,24 +47,57 @@ public class Opciones {
         String apellido = sc.nextLine();
         usuario.setApellido(apellido);
 
-        System.out.println("Teléfono:");
-        String comodin = sc.nextLine();
-        int telefono = Integer.parseInt(comodin);
-        usuario.setTelefono(telefono);
 
-        System.out.println("Anexo");
-        String comodin2 = sc.nextLine();
-        int anexo = Integer.parseInt(comodin2);
-        usuario.setAnexo(anexo);
+        boolean flag3 = true;
+        int opt3;
+        while (flag3) {
 
-        boolean flag2=true;
-        while (flag2){
+            System.out.println("Anexo");
+
+            String comodin2 = sc.nextLine();
+
+
+            try {
+                opt3 = Integer.parseInt(comodin2);
+
+                usuario.setAnexo(opt3);
+                flag3 = false;
+
+            } catch (NumberFormatException e) {
+                System.out.println("¡POR FAVOR, INGRESE UN NÚMERO!\n");
+
+            }
+        }
+
+
+        boolean flag4 = true;
+        int opt4;
+        while (flag4) {
+
+            System.out.println("Teléfono:");
+            String comodin4 = sc.nextLine();
+
+
+            try {
+                opt4 = Integer.parseInt(comodin4);
+                usuario.setTelefono(opt4);
+                flag4 = false;
+
+            } catch (NumberFormatException e) {
+                System.out.println("¡POR FAVOR, INGRESE UN NÚMERO!\n");
+
+            }
+        }
+
+
+        boolean flag2 = true;
+        while (flag2) {
             System.out.println("Departamento:");
             String comodin3 = sc.nextLine();
-            if(comodin3.equalsIgnoreCase("ING") || comodin3.equalsIgnoreCase("CIE")|| comodin3.equalsIgnoreCase("LET")){
+            if (comodin3.equalsIgnoreCase("ING") || comodin3.equalsIgnoreCase("CIE") || comodin3.equalsIgnoreCase("LET")) {
                 usuario.setDepartamento(comodin3);
-                flag2=false;
-            }else {
+                flag2 = false;
+            } else {
                 System.out.println("Dato incorrecto, ingrese nuevamente.");
             }
         }
@@ -77,6 +110,29 @@ public class Opciones {
     }
 
     public static void opcion4() {
+        System.out.println("Ingrese valor a buscar:");
+        String busqueda = sc.nextLine();
+        ArrayList<Usuario> Lista = DirectorioTelefonico.getDirectorio();
+        ArrayList<Usuario> listaExportar = new ArrayList<>();
+
+        for (int i = 0; i < Lista.size(); i++) {
+            Usuario usuarioX = Lista.get(i);
+            if (busqueda.equalsIgnoreCase(usuarioX.getNombre()) || busqueda.equalsIgnoreCase(usuarioX.getApellido())) {
+                listaExportar.add(usuarioX);
+            }
+
+        }
+        Collections.sort(listaExportar, new Comparator<Usuario>() {
+            @Override
+            public int compare(Usuario o1, Usuario o2) {
+                return o1.getNombre().compareTo(o2.getNombre());
+            }
+        });
+        for (Usuario user : listaExportar) {
+            System.out.println(user.getNombre());
+        }
+        ;
+
 
     }
 }

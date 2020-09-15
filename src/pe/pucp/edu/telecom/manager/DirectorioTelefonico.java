@@ -5,7 +5,7 @@ import pe.pucp.edu.telecom.entity.Usuario;
 import java.util.ArrayList;
 
 public class DirectorioTelefonico {
-    private static ArrayList<Usuario> directorio;
+    private static ArrayList<Usuario> directorio=new ArrayList<>();
 
     public static ArrayList<Usuario> getDirectorio() {
         return directorio;
