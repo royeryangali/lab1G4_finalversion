@@ -17,7 +17,7 @@ public class Opciones {
         System.out.println("Ingrese los datos a continuación: \n");
 
         boolean flag = true;
-        int opt;
+        Double opt;
         while (flag) {
 
             System.out.println("Código PUCP:");
@@ -25,7 +25,7 @@ public class Opciones {
             String numStr = sc.nextLine();
 
             try {
-                opt = Integer.parseInt(numStr);
+                opt = Double.parseDouble(numStr);
                 if (opt <= 99999999) {
                     usuario.setCodigopucp(opt);
                     flag = false;
@@ -35,7 +35,7 @@ public class Opciones {
 
             } catch (NumberFormatException e) {
                 System.out.println("¡POR FAVOR, INGRESE UN NÚMERO!\n");
-                continue;
+
             }
         }
         System.out.println("Nombre:");

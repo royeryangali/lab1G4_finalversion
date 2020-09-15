@@ -1,18 +1,18 @@
 package pe.pucp.edu.telecom.entity;
 
 public class Usuario {
-    private int codigopucp;
+    private Double codigopucp;
     private String nombre;
     private String apellido;
     private int telefono;
     private int anexo;
     private String departamento;
 
-    public int getCodigopucp() {
+    public Double getCodigopucp() {
         return codigopucp;
     }
 
-    public void setCodigopucp(int codigopucp) {
+    public void setCodigopucp(Double codigopucp) {
         this.codigopucp = codigopucp;
     }
 
