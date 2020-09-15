@@ -1,4 +1,4 @@
-package com.company;
+package pe.pucp.edu.telecom.main;
 
 public class Main {
 
