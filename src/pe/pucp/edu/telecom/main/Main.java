@@ -25,7 +25,7 @@ public class Main {
                 opt = Integer.parseInt(numStr);
 
             } catch (NumberFormatException e) {
-                System.out.println("POR FAVOR INGRESE UN NUMERO!!!!!!!\n");
+                System.out.println("¡POR FAVOR, INGRESE UN NÚMERO!\n");
                 continue;
             }
             switch (opt) {
@@ -33,7 +33,7 @@ public class Main {
 
                     break;
                 case 2:
-
+                    System.out.println("Por favor, ingrese lo datos solicitados: \n");
                     break;
                 case 3:
 
@@ -42,7 +42,7 @@ public class Main {
 
                     break;
                 default:
-                    System.out.println("OPCION ERRONEA!!!!!!!\n");
+                    System.out.println("¡OPCIÓN ERRÓNEA!\n");
                     break;
             }
         }
