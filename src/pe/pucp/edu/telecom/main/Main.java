@@ -35,7 +35,7 @@ public class Main {
                     Opciones.opcion1();
                     break;
                 case 2:
-                                        Opciones.opcion2();
+                    Opciones.opcion2();
                     break;
                 case 3:
                     Opciones.opcion3();
@@ -49,4 +49,4 @@ public class Main {
             }
         }
     }
-    }
+}
