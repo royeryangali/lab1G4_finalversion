@@ -1,6 +1,7 @@
 package pe.pucp.edu.telecom.util;
 
 import pe.pucp.edu.telecom.entity.Usuario;
+import pe.pucp.edu.telecom.manager.DirectorioTelefonico;
 
 import java.util.Scanner;
 
@@ -67,7 +68,7 @@ public class Opciones {
                 System.out.println("Dato incorrecto, ingrese nuevamente.");
             }
         }
-
+        DirectorioTelefonico.agregar(usuario);
 
     }
 
