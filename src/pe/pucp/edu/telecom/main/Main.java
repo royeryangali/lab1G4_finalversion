@@ -1,5 +1,7 @@
 package pe.pucp.edu.telecom.main;
 
+import pe.pucp.edu.telecom.util.Opciones;
+
 import java.util.Scanner;
 
 public class Main {
@@ -30,21 +32,25 @@ public class Main {
             }
             switch (opt) {
                 case 1:
-
+                    Opciones.opcion1();
                     break;
                 case 2:
-
+                    Opciones.opcion2();
                     break;
                 case 3:
-
+                    Opciones.opcion3();
                     break;
                 case 4:
-
+                    Opciones.opcion4();
                     break;
                 default:
                     System.out.println("OPCION ERRONEA!!!!!!!\n");
                     break;
             }
         }
+
+
+
     }
+
     }
